@@ -1,0 +1,1 @@
+gcc -o game game.c -lraylib -lgdi32 -lwinmm
