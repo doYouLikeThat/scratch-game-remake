@@ -61,8 +61,7 @@ int main(void) {
   apple.texture = LoadTexture("assets/applePixel.png");
 
   Enemy enemy;
-  enemy.texture = LoadTexture("assets/placeholder.png");
-  enemy.speed = (float)GetRandomValue(2.99, 3.5);
+  enemy.texture = LoadTexture("assets/ghost_blue.png");
   enemy.collision.x = screenWidth/2;
   enemy.collision.y = -30;
   enemy.collision.width = 20;
@@ -70,7 +69,7 @@ int main(void) {
   enemy.active = false;
 
   Enemy enemy2;
-  enemy2.texture = LoadTexture("assets/placeholder.png");
+  enemy2.texture = LoadTexture("assets/ghost_orange.png");
   enemy2.collision.x = screenWidth/2;
   enemy2.collision.y = -30;
   enemy2.collision.width = 20;
@@ -78,8 +77,7 @@ int main(void) {
   enemy2.active = false;
 
   Enemy enemy3;
-  enemy3.texture = LoadTexture("assets/placeholder.png");
-  enemy3.speed = 4;
+  enemy3.texture = LoadTexture("assets/ghost_pink.png");
   int enemy3speedY = 6;
   enemy3.collision.x = getRandPos().x;
   enemy3.collision.y = -30;
@@ -88,8 +86,7 @@ int main(void) {
   enemy3.active = false;
 
   Enemy enemy4;
-  enemy4.texture = LoadTexture("assets/placeholder.png");
-  enemy4.speed = 4;
+  enemy4.texture = LoadTexture("assets/ghost_teal.png");
   enemy4.collision.x = getRandPos().x;
   enemy4.collision.y = 630;
   enemy4.collision.width = 20;
@@ -158,6 +155,7 @@ int main(void) {
       enemy.active = true;
       
       // Enemies
+      enemy.speed = (float)GetRandomValue(0, 5);
       if (enemy.active) {
 	if (enemy.collision.x < player.collision.x) enemy.collision.x += enemy.speed;
 	else if (enemy.collision.x > player.collision.x) enemy.collision.x -= enemy.speed;
@@ -192,6 +190,7 @@ int main(void) {
 	enemy3.active = true;
       }
 
+      enemy3.speed = (float)GetRandomValue(0, 3);
       if (enemy3.active) {
 	if (enemy3.collision.x < player.collision.x) enemy3.collision.x += enemy3.speed;
 	else if (enemy3.collision.x > player.collision.x) enemy3.collision.x -= enemy3.speed;
@@ -205,6 +204,7 @@ int main(void) {
 	enemy4.active = true;
       }
 
+      enemy4.speed = (float)GetRandomValue(0, 4);
       if (enemy4.active) {
 	if (enemy4.collision.x < player.collision.x) enemy4.collision.x += enemy4.speed;
 	else if (enemy4.collision.x > player.collision.x) enemy4.collision.x -= enemy4.speed;
